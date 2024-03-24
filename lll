@@ -1,0 +1,20 @@
+ var word = Console.ReadLine();
+  string rere = string.Empty;
+  Dictionary<string,string> dic = new Dictionary<string,string>();
+  while (word !="end")
+  {
+      for (int i = word.Length -1;i>=0; i--)
+      {
+          rere += word[i];
+      }
+      if (!dic.ContainsKey(word))
+      {
+          dic.Add(word, rere);
+      }
+      rere = string.Empty;
+      word = Console.ReadLine();
+  }
+  foreach (var item in dic)
+  {
+      Console.WriteLine($"{item.Key} = {item.Value}");
+  }

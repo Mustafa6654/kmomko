@@ -1,0 +1,21 @@
+ Dictionary<string, int> words = new Dictionary<string, int>();
+ var v = Console.ReadLine().Split(' ').ToArray();
+
+ for (int i = 0; i < v.Length; i++)
+ {
+     if (words.ContainsKey(v[i]))
+     {
+         words[v[i]]++;
+     }
+     else
+     {
+         words.Add(v[i], 1);
+     }
+ }
+ foreach (var item in words)
+ {
+     if (item.Value%2!=0)
+     {
+         Console.WriteLine(item.Key);
+     }
+ }
